@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Visual Data To Close High-Ticket SEO Clients</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0f1117',
+                            800: '#14171f',
+                            700: '#1a1e28',
+                            600: '#1f2433',
+                            500: '#2a3042',
+                        },
+                        gold: '#d9a531',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-white">
+    <div class="fixed top-0 left-0 w-full z-10 bg-dark-900/90 backdrop-blur-sm px-6 py-4">
+        <h1 class="text-[24px] font-bold text-center">Using Visual Data To Close High-Ticket SEO Clients</h1>
+    </div>
+    <div class="w-full h-screen flex items-center justify-center pt-16">
+        <video 
+            id="videoPlayer"
+            class="w-full h-full"
+            controls
+            autoplay>
+            <source src="Bootcamp 3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        const video = document.getElementById('videoPlayer');
+        
+        // Request fullscreen when video loads
+        video.addEventListener('loadeddata', function() {
+            if (video.requestFullscreen) {
+                video.requestFullscreen().catch(err => {
+                    console.log('Fullscreen request failed:', err);
+                });
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+        });
+        
+        // Make video fullscreen on play
+        video.addEventListener('play', function() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement && 
+                !document.mozFullScreenElement && !document.msFullscreenElement) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen().catch(err => {
+                        console.log('Fullscreen request failed:', err);
+                    });
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                } else if (video.mozRequestFullScreen) {
+                    video.mozRequestFullScreen();
+                } else if (video.msRequestFullscreen) {
+                    video.msRequestFullscreen();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
